@@ -1,0 +1,18 @@
+<form>
+  <mat-form-field class="container">
+
+    <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+    <input type="text" placeholder="Search books ..."
+           matInput
+           [formControl]="searchTerm"
+           [matAutocomplete]="auto">
+
+    <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let books of myBooks" [value]="books.BookName">
+        {{ books.BookName }}
+      </mat-option>
+    </mat-autocomplete>
+
+  </mat-form-field>
+</form>
